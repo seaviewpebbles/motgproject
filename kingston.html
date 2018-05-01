@@ -3,6 +3,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+
 <title>Man on the ground</title>
 
 <meta name="keywords" content="man on the ground friend in the country" />
@@ -37,66 +41,6 @@ body {
 
 
 </style>
-
-
-<script type = "text/javascript">
-  
-  function is_checked(){
-  
-  var no_checked = document.getElementById('ageinfono').checked;
-  var yes_checked = document.getElementById('ageinfoyes').checked;
-  if(no_checked == true && yes_checked == false){
-  
-    alert('You are under age to use this site');
-    return false;
-  }else{
-  
-    return true;
-  }
-  }
-  
-  function MM_validateForm() { //v4.0
-  if (document.getElementById){
-    var i,p,q,nm,test,num,min,max,errors='',args=MM_validateForm.arguments;
-    for (i=0; i<(args.length-2); i+=3) { test=args[i+2]; val=document.getElementById(args[i]);
-      if (val) { nm=val.name; if ((val=val.value)!="") {
-        if (test.indexOf('isEmail')!=-1) { p=val.indexOf('@');
-          if (p<1 || p==(val.length-1)) errors+='- '+nm+' must contain an e-mail address.\n';
-        } else if (test!='R') { num = parseFloat(val);
-          if (isNaN(val)) errors+='- '+nm+' must contain a number.\n';
-          if (test.indexOf('inRange') != -1) { p=test.indexOf(':');
-            min=test.substring(8,p); max=test.substring(p+1);
-            if (num<min || max<num) errors+='- '+nm+' must contain a number between '+min+' and '+max+'.\n';
-      } } } else if (test.charAt(0) == 'R') errors += '- '+nm+' is required.\n'; }
-    } if (errors) alert('The following error(s) occurred:\n'+errors);
-    document.MM_returnValue = (errors == '');
-}}
-  
-
-$(document).ready(function () {
-
-  $('#myImg').on({
-    mouseover: function () {
-$(this).css({
-  'height':250, 'width':250
-
-});
-
-    },
-
-    mouseout: function () {
-$(this).css({
-  'height':153, 'width':135
-
-});
-
-    }
-
-  });
-});
-
-</script>
-  
 
 </head>
 
@@ -148,6 +92,25 @@ $(this).css({
       alt="Man on the ground Kingston"  align="left" />
        Welcome to your man on the ground Jamaica</p><br />
 
+
+       <span>Star Rating</span><br/>
+
+       <fieldset class="rating" >
+           <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+           <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+           <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+           <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+           <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
+           <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+           <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+           <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+           <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+           <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+       </fieldset><br/>		  
+
+
+
+
     <p><h3>Sharifa Brock</h3></p> 
   
 <p><strong>School Principal</strong></p>
@@ -170,8 +133,7 @@ $(this).css({
 
   <div class="alert">Your message has been sent</div>        
 
-    <form id="onlineqoute" name="onlineqoute" target="_blank"
-     onsubmit="return is_checked()">
+    <form name="onlineqoute" target="_blank" id="onlineqoute">
       
       <p>*Your Name:<br />
         <label for="name"></label>
@@ -185,10 +147,10 @@ $(this).css({
 
         <p>*Are you 18 or older?<br />
           Yes
-          <input type="radio" name="radio" id="ageinfoyes" value="yes" />
+          <input type="radio" name="age" value="yes" />
                   <label for="yes"></label>
                   No 
-                  <input name="radio" type="radio" id="ageinfono" value="no" checked="checked" />     
+                  <input name="age" type="radio" value="no" checked="checked" />     
       
   <br />
        
