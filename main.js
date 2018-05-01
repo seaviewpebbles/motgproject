@@ -13,7 +13,6 @@
 var messagesRef = firebase.database().ref('messages');
 
 
-
 //listen for fork submit
 document.getElementById('onlineqoute').addEventListener('submit', submitForm);
 function submitForm(e){
@@ -22,18 +21,18 @@ e.preventDefault();
 //get values
 var name = getInputVal('name');
 var email = getInputVal('email');
-var radio = getInputVal('ageinfoyes');
+var valid_age = $('input[name=age]:checked').val();
 var additionalinfo = getInputVal('additionalinfo');
-
+debugger;
 //save message
-saveMessage(name, email, ageinfoyes, additionalinfo);
+saveMessage(name, email, valid_age, additionalinfo);
 
 //show alert
 document.querySelector('.alert').style.display = 'block';
 
 //hide alert after 3 seconds
 setTimeout(function(){
-    document.querySelector('.alert').style.display = 'none';   
+    document.querySelector('.alert').style.display = 'none';
 },3000);
 
 //clear form
@@ -47,12 +46,12 @@ function getInputVal(id){
 
  //save message to firebase
 
- function saveMessage(name, email, ageinfoyes, additionalinfo ){
+ function saveMessage(name, email, valid_age, additionalinfo ){
     var newMessageRef = messagesRef.push();
     newMessageRef.set({
 name:name,
 email:email,
-radio:ageinfoyes,
+valid_age:valid_age,
 additionalinfo:additionalinfo
 
     });
