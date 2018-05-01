@@ -47,6 +47,7 @@ function submitForm(e) {
   var email = getInputVal('email');
   var valid_age = $('input[name=age]:checked').val();
   var additionalinfo = getInputVal('additionalinfo');
+  
   //save message
   saveMessage(name, email, valid_age, additionalinfo);
 
