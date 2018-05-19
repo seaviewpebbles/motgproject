@@ -47,9 +47,12 @@ function submitForm(e) {
   var email = getInputVal('email');
   var valid_age = $('input[name=age]:checked').val();
   var additionalinfo = getInputVal('additionalinfo');
+  var star_rate = $('input[name=rating]:checked').val();
+
+
   
   //save message
-  saveMessage(name, email, valid_age, additionalinfo);
+  saveMessage(name, email, valid_age, additionalinfo, star_rate);
 
   //show alert
   document.querySelector('.alert').style.display = 'block';
@@ -69,13 +72,14 @@ function getInputVal(id) {
 }
 
 //save message to firebase
-function saveMessage(name, email, valid_age, additionalinfo) {
+function saveMessage(name, email, valid_age, additionalinfo, star_rate) {
   var newMessageRef = messagesRef.push();
   newMessageRef.set({
     name: name,
     email: email,
     valid_age: valid_age,
-    additionalinfo: additionalinfo
+    additionalinfo: additionalinfo,
+    star_rate: star_rate
 
   });
 }
